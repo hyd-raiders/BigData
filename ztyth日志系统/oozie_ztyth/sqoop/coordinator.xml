@@ -1,0 +1,18 @@
+<!--每天凌晨10分开始执行 ${coord:minutes(6)}  10 0 * * *-->
+<coordinator-app name="sqoop2hive-coord" frequency="${coord:minutes(30)}" start="${startDate}" end="${endDate}" timezone="UTC" xmlns="uri:oozie:coordinator:0.2">
+    <action>
+        <workflow>
+            <app-path>${workflowAppUri}</app-path>
+            <configuration>
+                <property>
+                    <name>jobTracker</name>
+                    <value>${jobTracker}</value>
+                </property>
+                <property>
+                    <name>nameNode</name>
+                    <value>${nameNode}</value>
+                </property>
+            </configuration>
+        </workflow>
+    </action>
+</coordinator-app>

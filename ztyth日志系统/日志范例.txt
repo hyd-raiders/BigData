@@ -1,0 +1,27 @@
+﻿登录日志：
+
+日志内容:{"OperationOID":"0c1d37e5-5400-4851-a1e8-12a4b29520b6","PageCode":"Login","PageName":"登录","FunctionCode":"Login","FunctionName":"登录","PageUrl":"/Account/Login","CorpTemplate":"hczhu_BUSINESS","DoPerson":"lixy|kqvmwhrcj15hoq44jouhgep0","DoPersonIP":"192.168.12.53","CorpCode":"9999999999","CorpName":"神州数码捷通科技有限公司","EventType":"BusinessOperation","LogType":"Operation","Message":"登录系统|用户登录成功，登录入口：51haitun ","InsertTime":"\/Date(1528794949599+0800)\/","BrowserInfo":"Chrome v.55.0","OnLineTime":"","IsRestore":0,"RestoreData":null}
+
+修改密码：
+
+日志内容:{"OperationOID":"18354c56-787e-4af5-9ec6-14fce9cb271e","PageCode":"ChangePwd","PageName":"修改密码","FunctionCode":"ChangePwd","FunctionName":"修改密码","PageUrl":"/Home/ChangePwd","CorpTemplate":"hczhu_BUSINESS","DoPerson":"lixy|dlf4ryhjzwp3aet1znayfzoi","DoPersonIP":"192.168.12.53","CorpCode":"9999999999","CorpName":"神州数码捷通科技有限公司","EventType":"BusinessOperation","LogType":"Operation","Message":"修改密码|用户修改密码成功","InsertTime":"\/Date(1528944475804+0800)\/","BrowserInfo":"Chrome v.67.0","OnLineTime":"","IsRestore":0,"RestoreData":null}
+
+操作日志（业务系统调用接口记录）：
+
+日志内容:{"OperationOID":"a1449220-7590-40d4-bd3c-55ae9f30331a","PageCode":"ZTYTH-AD","PageName":"备案资料库","FunctionCode":"Update","FunctionName":"更新","PageUrl":"~/ZTYTH/ArchivalData/HbBaseHead/Index","CorpTemplate":"hczhu_BUSINESS","DoPerson":"lixy|dlf4ryhjzwp3aet1znayfzoi","DoPersonIP":"192.168.12.53","CorpCode":"9999999999","CorpName":"神州数码捷通科技有限公司","EventType":"BusinessOperation","LogType":"Operation","Message":"更新备案资料库|更新备案资料库，企业编码：999999999","InsertTime":"\/Date(1528944475804+0800)\/","BrowserInfo":"Chrome v.67.0","OnLineTime":"","IsRestore":0,"RestoreData":null}
+
+日志内容:{"OperationOID":"83b069cf-af2a-4305-9afa-d56fe6cea676","PageCode":"ZTYTH-HbHome","PageName":"一体化备案","FunctionCode":"Send","FunctionName":"申报","PageUrl":"~/ZTYTH/HBSetAndChange/HbHome/Index","CorpTemplate":"hczhu_BUSINESS","DoPerson":"lixy|dlf4ryhjzwp3aet1znayfzoi","DoPersonIP":"192.168.12.53","CorpCode":"9999999999","CorpName":"神州数码捷通科技有限公司","EventType":"BusinessOperation","LogType":"Operation","Message":"一体化备案手册申报|一体化备案手册申报，企业编码：999999999 企业内部编号：ems123 手册编号：C23031122013","InsertTime":"\/Date(1528944475804+0800)\/","BrowserInfo":"Chrome v.67.0","OnLineTime":"","IsRestore":0,"RestoreData":null}
+
+数据日志：
+
+单表修改：
+日志内容:{"OperationOID":"5953b35c-2b56-478a-9799-29a8a3f6a6a4","PageCode":"ZTYTH-Publish","PageName":"发布通知","FunctionCode":" ","FunctionName":" ","PageUrl":"~/ZTYTH/NoticeManage/NoticePublish/Index","CorpTemplate":"hczhu_BUSINESS","DoPerson":"lixy|dlf4ryhjzwp3aet1znayfzoi","DoPersonIP":"192.168.12.53","CorpCode":"9999999999","CorpName":"神州数码捷通科技有限公司","EventType":"PageLoad","LogType":"Data","Message":"{\"TableName\":\"T_ZTYTH_NOTICE_MANAGE\",\"UpdateColumns\":[{\"ColumnName\":\"NOTICE_CONTENT\",\"NewValue\":\"<p>\r\n\tasdasdasdasdasdasdasdasdasdasd\r\n</p>\r\n<p>\r\n\tniasdhasd;las d;l\r\n</p>\",\"OldValue\":\"asdasdasdasdasdasdasdasdasdasd\"},{\"ColumnName\":\"UPDATE_TIME\",\"NewValue\":\"2018/6/14 11:44:46\",\"OldValue\":\"2018/6/12 19:12:26\"}],\"PriKeyValue\":\"e7d85b56-b475-4be9-9b02-9d81e57527c1\"}","InsertTime":"\/Date(1528947886639+0800)\/","BrowserInfo":"Chrome v.67.0","OnLineTime":null,"IsRestore":0,"RestoreData":null}
+
+表体修改：
+日志内容:{"OperationOID":"585e7d75-80cd-4e83-adfe-92fb71948b28","PageCode":"ZTYTH-HbImg","PageName":"手册设立料件","FunctionCode":" ","FunctionName":" ","PageUrl":"","CorpTemplate":"hczhu_BUSINESS","DoPerson":"lixy|dlf4ryhjzwp3aet1znayfzoi","DoPersonIP":"192.168.12.53","CorpCode":"9999999999","CorpName":"神州数码捷通科技有限公司","EventType":"PageLoad","LogType":"Data","Message":"{\"TableName\":\"T_ZTYTH_HB_IMG\",\"UpdateColumns\":[{\"ColumnName\":\"G_MODEL\",\"NewValue\":\"asdasd\",\"OldValue\":\"\"},{\"ColumnName\":\"COUNTRY_CODE\",\"NewValue\":\"101\",\"OldValue\":\"102\"},{\"ColumnName\":\"NOTE\",\"NewValue\":\"asdasd\",\"OldValue\":\"\"},{\"ColumnName\":\"DUTY_MODE\",\"NewValue\":\"2\",\"OldValue\":\"3\"},{\"ColumnName\":\"UPDATE_TIME\",\"NewValue\":\"2018/6/14 12:12:18\",\"OldValue\":\"2018/6/12 17:00:26\"},{\"ColumnName\":\"UPDATE_USER\",\"NewValue\":\"lixy\",\"OldValue\":\"yw1\"}],\"PriKeyValue\":\"2c72ff20-afc5-407b-9763-3d88ae330a03\"}","InsertTime":"\/Date(1528949539063+0800)\/","BrowserInfo":"Chrome v.67.0","OnLineTime":null,"IsRestore":0,"RestoreData":null}
+
+单表删除：
+目前直通一体化中还没有现成的例子
+
+表体删除：
+日志内容:{"OperationOID":"6c12a1ca-c540-421f-9e19-4477d0d7e775","PageCode":"ZTYTH-HbImg","PageName":"手册设立料件","FunctionCode":" ","FunctionName":" ","PageUrl":"","CorpTemplate":"hczhu_BUSINESS","DoPerson":"lixy|dlf4ryhjzwp3aet1znayfzoi","DoPersonIP":"::1","CorpCode":"9999999999","CorpName":"神州数码捷通科技有限公司","EventType":"PageLoad","LogType":"Data","Message":"{\"TableName\":\"T_ZTYTH_HB_IMG\",\"DeleteRow\":{\"OID\":\"cb7d0f04-db7a-461d-b666-68a8d3b1063b\",\"HB_NO\":\"\",\"G_NO\":\"2\",\"USE_TYPE\":\"2\",\"CODE_T\":\"7406101000\",\"G_NAME\":\"铜粉\",\"G_MODEL\":\"\",\"UNIT\":\"035\",\"UNIT_1\":\"035\",\"COUNTRY_CODE\":\"102\",\"DEC_PRICE\":\"3\",\"CURR\":\"502\",\"QTY\":\"3\",\"MAIN_FLAG\":\"1\",\"NOTE\":\"\",\"MODIFY_MARK\":\"3\",\"APPR_AMT\":\"9\",\"DUTY_MODE\":\"3\",\"HEAD_OID\":\"73578f42-f055-46c9-b932-a7057f4f2fc3\",\"INSERT_TIME\":\"2018/6/14 13:33:37\",\"INSERT_USER\":\"lixy\",\"DBSOURCE\":\"0\",\"IMG_CHANGE_OID\":\"\",\"UPDATE_TIME\":\"\",\"UPDATE_USER\":\"\"},\"PriKeyValue\":\"cb7d0f04-db7a-461d-b666-68a8d3b1063b\"}","InsertTime":"\/Date(1528954421237+0800)\/","BrowserInfo":"Chrome v.67.0","OnLineTime":null,"IsRestore":0,"RestoreData":null}

@@ -1,0 +1,1 @@
+convert -density 200 -units PixelsPerInch  y依摩泰发票.pdf  yy1.jpg

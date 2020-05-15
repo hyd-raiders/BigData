@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="sqoop-to-hive">
+    <start to="sqoop2hive_T_ZTYTH_HB_HEAD"/>
+    <action name="sqoop2hive_T_ZTYTH_HB_HEAD">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5  --table T_ZTYTH_HB_HEAD --hive-table T_ZTYTH_HB_HEAD --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_HEAD_CHANGE"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_HEAD_CHANGE">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5 --table T_ZTYTH_HB_HEAD_CHANGE --hive-table T_ZTYTH_HB_HEAD_CHANGE --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_IMG"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_IMG">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_IMG --hive-table T_ZTYTH_HB_IMG --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_IMG_CHANGE"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_IMG_CHANGE">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_IMG_CHANGE --hive-table T_ZTYTH_HB_IMG_CHANGE --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_EXG"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_EXG">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_EXG --hive-table T_ZTYTH_HB_EXG --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_EXG_CHANGE"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_EXG_CHANGE">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_EXG_CHANGE --hive-table T_ZTYTH_HB_EXG_CHANGE --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_CONSUME"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_CONSUME">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_CONSUME --hive-table T_ZTYTH_HB_CONSUME --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_CONSUME_CHANGE"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_CONSUME_CHANGE">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_CONSUME_CHANGE --hive-table T_ZTYTH_HB_CONSUME_CHANGE --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_ENTRY_HEAD_E"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_ENTRY_HEAD_E">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_ENTRY_HEAD_E --hive-table T_ZTYTH_ENTRY_HEAD_E --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_ENTRY_LIST_E"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_ENTRY_LIST_E">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_ENTRY_LIST_E --hive-table T_ZTYTH_ENTRY_LIST_E --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_ENTRY_HEAD_I"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_ENTRY_HEAD_I">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_ENTRY_HEAD_I --hive-table T_ZTYTH_ENTRY_HEAD_I --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_ENTRY_LIST_I"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_ENTRY_LIST_I">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_ENTRY_LIST_I --hive-table T_ZTYTH_ENTRY_LIST_I --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_DCR_HEAD"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_DCR_HEAD">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_DCR_HEAD --hive-table T_ZTYTH_HB_DCR_HEAD --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_DCR_IMP_IMG"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_DCR_IMP_IMG">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_DCR_IMP_IMG --hive-table T_ZTYTH_HB_DCR_IMP_IMG --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_DCR_BASIC_INFO"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_DCR_BASIC_INFO">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_DCR_BASIC_INFO --hive-table T_ZTYTH_HB_DCR_BASIC_INFO --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_DCR_BYPRO"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_DCR_BYPRO">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_DCR_BYPRO --hive-table T_ZTYTH_HB_DCR_BYPRO --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_DCR_SCRAP"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_DCR_SCRAP">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_DCR_SCRAP --hive-table T_ZTYTH_HB_DCR_SCRAP --split-by OID</command>
+        </sqoop>
+        <ok to="sqoop2hive_T_ZTYTH_HB_DCR_BALANCE"/>
+        <error to="fail"/>
+    </action>
+    <action name="sqoop2hive_T_ZTYTH_HB_DCR_BALANCE">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+                 <property>
+                    <name>hive.metastore.uris</name>
+                    <value>${hive_metastore_uris}</value>
+                </property>
+            </configuration>
+            <command>import  ${sqoop_import_params_short} -hive-drop-import-delims --fields-terminated-by "\001" --hive-overwrite --delete-target-dir --hive-import -m 5   --table T_ZTYTH_HB_DCR_BALANCE --hive-table T_ZTYTH_HB_DCR_BALANCE --split-by OID</command>
+        </sqoop>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+    <kill name="fail">
+        <message>Sqoop failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

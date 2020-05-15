@@ -1,0 +1,1 @@
+all in http://devops.dcjet.com.cn:52000/mirrors/bigData

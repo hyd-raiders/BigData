@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../../../dcUIFramework/jquery-easyui/themes/dcjet/easyui.css">
+    <link rel="stylesheet" href="../../../dcUIFramework/jquery-easyui/themes/dcjet/icon.css">
+    <link rel="stylesheet" href="../../../dcUIFramework/res/css/dc.default.css">
+    <script src="../../../dcUIFramework/jquery-1.11.3.min.js"></script>
+    <script src="../../../dcUIFramework/jquery-easyui/jquery.easyui.min.js"></script>
+    <script src="../../../dcUIFramework/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../../../dcUIFramework/dc.framework-1.0.2.js"></script>
+    <script src="../../../dcUIFramework/res/js/jquery-selectlist/jquery.autocomplete.js"></script>
+    <script src="../../../dc.pageConfig.js"></script>
+    <script src="../resources/scripts/index.js"></script>
+    <title>直通一体化日志查询系统</title>
+    <style>
+        /* 内容超长时显示... */
+        .txt-overflow {
+            width: 300px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="dc-form-wrapper">
+    <form>
+        <div class="dc-search-wrapper dc-panel">
+            <div class="dc-panel-head">
+                <span class="dc-sitePath">当前位置：日志查询系统  </span>
+                <a id="s_search" dcc="button" dpm="page-index-search" class="dc-btn dc-btn-search">标准查询</a>
+                <a id="s_quicksearch" dcc="button" dpm="page-index-search" class="dc-btn dc-btn-search">快速查询</a>
+                <a id="s_searchHidden" dcc="button" class="dc-searchHidden dc-btn dc-btn-hideSearch">隐藏查询</a>
+            </div>
+            <div class="dc-panel-body">
+                <!-- 查询条件 -->
+                <table class="dc-searchTable">
+                    <tr>
+                        <th>企业编码</th>
+                        <td><input id="s_corpCode" dcc="textbox" dcm="corpcode"/></td>
+                        <th>用户名</th>
+                        <td><input id="s_username" dcc="textbox" dcm="username"/></td>
+                        <th>操作时间</th>
+                        <td><input id="s_createDateBegin" name="createDateBegin" dcc="datebox" dcm="createdatebegin" width="100" />
+                            ~<input id="s_createDateEnd" name="createdateEnd" dcc="datebox" dcm="createdateend" /></td>
+                    </tr>
+                    <tr>
+                        <th>模块名称</th>
+                        <td><input id="s_pageName" dcc="select" dcm="pagename"></td>
+                        <th>操作类型</th>
+                        <td><input id="s_functionName" dcc="textbox" dcm="functionname" /></td>
+                        <th>日志详情</th>
+                        <td><input id="s_message" dcc="textbox" dcm="message"/></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="dc-toolbar-wrapper dc-panel">
+            <div class="dc-panel-body">
+                <a id="t_export" dcc="button" dpm="page-index-export" class="dc-btn dc-btn-export">导出</a>
+                <a href="" id="linkExport" name="linkExport" style="display: none;">导出</a>
+            </div>
+        </div>
+        <div class="dc-grid-wrapper dc-panel">
+            <table id="g_table" dcc="datagrid"></table>
+        </div>
+    </form>
+</div>
+</body>
+</html>

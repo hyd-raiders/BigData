@@ -1,0 +1,233 @@
+﻿/*****************************覆盖easyui的样式**********************************/
+/*tab内容不出现滚动条*/
+.tabs-panels > .panel > .panel-body {
+	overflow: hidden;
+	background-color: rgb(239, 240, 244)
+}
+/*tab内容不出现滚动条*/
+.window-body {
+	overflow: hidden;
+}
+/******************************************************************************/
+/***********************************框架布局样式*********************************/
+body {
+	margin: 0;
+	padding: 0;
+	font-family:"微软雅黑";
+}
+form{
+	margin: 0;
+	padding:0;
+}
+.dc-form-wrapper {
+	padding: 0px;
+	padding-left: 4px;
+	background-color: rgb(239, 240, 244);
+}
+.dc-panel {
+	background-color: white;
+	border-radius: 4px;
+	border: 0;
+	border-bottom: 1px solid rgb(230,231,235);
+	margin: 0;
+	padding: 5px;
+}
+.dc-panel + .dc-panel {
+	margin-top: 3px;
+}
+.dc-sitePath {
+	float: left;
+	display: inline-block;
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	color: #222;
+	font-weight: bold;
+}
+.dc-dataTable, .dc-searchTable {
+	border-collapse: collapse;
+	width: 100%
+}
+.dc-dataTable th, .dc-dataTable td {
+	border: 1px solid #ddd;
+}
+.dc-dataTable th, .dc-searchTable th {
+	font-size: 12px;
+	text-align: right;
+	padding: 4px 10px;
+	color: #444;
+	font-weight: normal;
+	width: 10%
+}
+.dc-dataTable td, .dc-searchTable td {
+	text-align: left;
+	padding: 3px 6px;
+	width: 23%;
+	font-size:12px;
+}
+.dc-panel-head, .dc-panel-footer, .dc-panel-body {
+	margin: 0;
+	padding: 0;
+}
+.dc-data-wrapper .dc-panel-footer {
+	text-align: right;
+	margin-top: 5px;
+}
+.dc-search-wrapper {
+	padding: 0px;
+	padding-bottom: 0px;
+}
+.dc-search-wrapper .dc-panel-head {
+	padding: 3px 8px 3px 8px;
+	border-bottom: 1px dotted #dadada;
+}
+.dc-search-wrapper .dc-panel-head .l-btn {
+	float: right;
+	margin-left: 5px;
+}
+.dc-search-wrapper .dc-panel-head:after {
+	content: "";
+	clear: both;
+	display: block;
+	height: 0
+}
+.dc-grid-wrapper {
+	height: 200px;
+}
+.dc-foot-wrapper {
+    margin: 10px 0;
+    text-align: center;
+}
+.dc-required {
+    color: red;
+}
+.dc-foot-wrapper{
+	text-align:center;
+	padding-top:5px;}
+.easy-checklistbox, .easy-radiobox {
+    border-width: 1px;
+    border-style: solid;
+    background: white;
+    z-index: 1;
+    color: white;
+    width: 150px;
+    height: 18px;
+    resize: none;
+    outline: none;
+    display: inline-block;
+    position: relative;
+	cursor: pointer;
+}
+.easy-radiobox-label, .easy-checklistbox-label{
+	cursor: pointer;
+}
+.easyui-checklistbox, .easyui-radiobox {
+    display: inline-block;
+    background: none;
+    position: relative;
+    z-index:2;
+}
+.validatebox-invalid {
+    border-color: #ff0000;
+    border-radius:4px;
+}
+#loadingDiv{
+	position:absolute;
+	left:0;
+	right: 0;
+	top:0;
+	bottom: 0;
+	background:#f3f8ff;
+	opacity:1;
+	z-index:10000;
+    display: block;
+}
+#loadingCon{
+	position: absolute;
+	cursor1: wait;
+	width: 90px;
+	height: 35px;
+	line-height: 35px;
+	padding-left: 35px;
+	padding-right: 5px;
+	background: #fff url(../images/loading.gif) no-repeat scroll 10px 10px;
+	border: 2px solid #95B8E7;
+	color: #696969;
+	font-family: \'Microsoft YaHei\';
+	font-size: 14px;
+}
+.easyui-dctextbox{
+	text-indent: 5px;
+	line-height: 22px;
+	outline: none;
+	resize: none;
+}
+.easyui-dctextbox:focus{
+	border-color: #6b9cde;
+	-moz-box-shadow: 0 0 3px 0 #95B8E7;
+	-webkit-box-shadow: 0 0 3px 0 #95B8E7;
+	box-shadow: 0 0 3px 0 #95B8E7;
+}
+.easyui-dctextbox:disabled,.easyui-dcautocomplete .textbox-text:disabled,.easyui-dcnumberbox:disabled{
+	background-color:#ebebe4;
+	opacity: 0.6;
+}
+.easyui-dcautocomplete .textbox-text{
+	text-indent: 5px;
+	line-height: 22px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	height: 22px;
+}
+/*------------autocomplete--------------*/
+.autocomplete-suggestions {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	background: #FFF;
+	cursor: default;
+	overflow: auto;
+	-webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+	-moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+	box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+}
+.autocomplete-suggestion {
+	padding: 3px;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 12px;
+	color: #444;
+}
+.autocomplete-no-suggestion {
+	padding: 2px 5px;
+}
+.autocomplete-selected {
+	background: #3399ff;
+	color: #fff;
+}
+.autocomplete-suggestions strong {
+	font-weight: bold;
+	color: #fc8675 ;
+}
+.autocomplete-group {
+	padding: 2px 5px;
+	font-weight: bold;
+	font-size: 16px;
+	color: #000;
+	display: block;
+	border-bottom: 1px solid #000;
+}
+.combo-arrow-disabled{
+	background-color: #e3e3e3;
+	opacity: 0.4;
+}
+.combo-arrow-disabled:hover{
+	background-color: #e3e3e3;
+	opacity: 0.4;
+}
+.td-a-edit{
+	color: #0080c7;
+	text-decoration: none;
+}

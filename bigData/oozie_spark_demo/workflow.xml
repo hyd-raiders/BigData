@@ -1,0 +1,24 @@
+<workflow-app xmlns='uri:oozie:workflow:0.5' name='SparkDemo'>
+    <start to='spark-node' />
+    <action name='spark-node'>
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <master>${master}</master>
+            <mode>${mode}</mode>
+            <name>sparkDemo</name>
+            <class>com.dcjet.demo.Demo001</class>
+            <jar>${nameNode}/spark/oozie_spark_demo/lib/risk.jar</jar>
+            <spark-opts>--executor-memory 600M --total-executor-cores 2 --driver-memory 600M </spark-opts>
+            <arg>${firstParam}</arg>
+        </spark>
+        <ok to="end" />
+        <error to="fail" />
+    </action>
+    <kill name="fail">
+        <message>Workflow failed, error
+            message[${wf:errorMessage(wf:lastErrorNode())}]
+        </message>
+    </kill>
+    <end name='end' />
+</workflow-app>

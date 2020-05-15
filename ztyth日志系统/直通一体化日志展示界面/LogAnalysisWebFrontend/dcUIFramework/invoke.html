@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <title>Invoke</title>
+    <script type="text/javascript" src="dcUIFramework/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        /**
+         * 获取Url中的参数 Json
+         */
+        function getRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            theRequest.count = 0;
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                var strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                    theRequest.count++;
+                }
+            }
+            return theRequest;
+        };
+        var request = getRequest();
+        var fun = request["fun"].replace(/\+/g, "");
+        var argNames = [], argValues = [];
+        if (request["argNames"] != "") {
+            argNames = (request["argNames"]).split(',');
+            argValues = (request["argValues"]).split(',');
+        }
+        //获取当前选中的tab下的iframe的window对象
+        var invokedWindow = parent.frames[argValues[0]].currentInvokeWindow;
+        //立即执行回掉函数
+        invokedWindow.eval("(" + fun + ")()");
+    </script>
+</head>
+<body>
+</body>
+</html>
